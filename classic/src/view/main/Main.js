@@ -76,29 +76,31 @@ Ext.define('InterviewApp.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
+        title: 'Personnel',
+        iconCls: 'fa-users',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
             xtype: 'mainlist'
         }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
+    },
+    //{
+    //    title: 'Users',
+    //    iconCls: 'fa-user',
+    //    bind: {
+    //        html: '{loremIpsum}'
+    //    }
+    //}, {
+    //    title: 'Groups',
+    //    iconCls: 'fa-users',
+    //    bind: {
+    //        html: '{loremIpsum}'
+    //    }
+    //}, {
+    //    title: 'Settings',
+    //    iconCls: 'fa-cog',
+    //    bind: {
+    //        html: '{loremIpsum}'
+    //    }
+    //}
+    ]
 });

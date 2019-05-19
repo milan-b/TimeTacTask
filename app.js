@@ -9,14 +9,14 @@ Ext.application({
     extend: 'InterviewApp.Application',
 
     requires: [
-        'InterviewApp.view.main.Main'
+        'InterviewApp.view.myMain.Main'
     ],
 
     // The name of the initial view to create. With the classic toolkit this class
     // will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
     // modern toolkit, the main view will be added to the Viewport.
     //
-    mainView: 'InterviewApp.view.main.Main'
+    mainView: 'InterviewApp.view.myMain.Main'
 
     //-------------------------------------------------------------------------
     // Most customizations should be made to InterviewApp.Application. If you need to

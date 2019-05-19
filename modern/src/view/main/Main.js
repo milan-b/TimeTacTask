@@ -31,31 +31,32 @@ Ext.define('InterviewApp.view.main.Main', {
 
     items: [
         {
-            title: 'Home',
-            iconCls: 'x-fa fa-home',
+            title: 'Personnel',
+            iconCls: 'x-fa fa-users',
             layout: 'fit',
             // The following grid shares a store with the classic version's grid as well!
             items: [{
                 xtype: 'mainlist'
             }]
-        },{
-            title: 'Users',
-            iconCls: 'x-fa fa-user',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Groups',
-            iconCls: 'x-fa fa-users',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Settings',
-            iconCls: 'x-fa fa-cog',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        }
+        },
+        //{
+        //    title: 'Users',
+        //    iconCls: 'x-fa fa-user',
+        //    bind: {
+        //        html: '{loremIpsum}'
+        //    }
+        //},{
+        //    title: 'Groups',
+        //    iconCls: 'x-fa fa-users',
+        //    bind: {
+        //        html: '{loremIpsum}'
+        //    }
+        //},{
+        //    title: 'Settings',
+        //    iconCls: 'x-fa fa-cog',
+        //    bind: {
+        //        html: '{loremIpsum}'
+        //    }
+        //}
     ]
 });
