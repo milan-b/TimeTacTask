@@ -12,7 +12,6 @@ Ext.define('InterviewApp.view.myMain.Main', {
     viewModel: {
         type: 'mymain-main'
     },
-    //viewModel: 'mymain-main',
 
     ui: 'navigation',
 
@@ -72,7 +71,7 @@ Ext.define('InterviewApp.view.myMain.Main', {
         {
             title: 'Personnel',
             iconCls: 'fa-users',
-            // The following grid shares a store with the classic version's grid as well!
+
             items: [
                 {
                     xtype: 'myMainlist'
@@ -80,5 +79,4 @@ Ext.define('InterviewApp.view.myMain.Main', {
             ]
         }
     ]
-    //html: 'Hello, World!!'
 });

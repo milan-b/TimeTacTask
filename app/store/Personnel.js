@@ -3,10 +3,11 @@ Ext.define('InterviewApp.store.Personnel', {
 
     alias: 'store.personnel',
 
-    model: 'Personnel',
+    model: 'InterviewApp.model.Personnel',
+
     proxy: {
         type: 'rest',
-        url: '/users.json',
+        url: 'https://reqres.in/api/users',
         reader: {
             type: 'json',
             rootProperty: 'data'

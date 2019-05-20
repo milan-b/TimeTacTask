@@ -4,12 +4,8 @@ Ext.define('InterviewApp.view.myMainList.ListController', {
 
 
     onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you for sure?', 'onConfirm', this);
-    },
-
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            // 
-        }
+        Ext.toast({ html: 'You cicked on ' + record.get('fullname'), align: 'tr' });
     }
+
+
 });

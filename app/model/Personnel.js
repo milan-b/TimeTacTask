@@ -1,6 +1,8 @@
 Ext.define('InterviewApp.model.Personnel', {
     extend: 'Ext.data.Model',
 
+    alias: 'model.Personnel',
+
     fields: [
         { name: 'id', type: 'int' },
         { name: 'first_name', type: 'string' },
