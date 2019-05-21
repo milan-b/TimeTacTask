@@ -5,6 +5,8 @@ Ext.define('InterviewApp.store.Personnel', {
 
     model: 'InterviewApp.model.Personnel',
 
+    storeId: 'peronnelStore',
+
     proxy: {
         type: 'rest',
         url: 'https://reqres.in/api/users',

@@ -26,20 +26,19 @@ Ext.define('InterviewApp.view.myMainList.List', {
                     renderTo: document.body,
                     bodyPadding: 10,
                     defaultType: 'textfield',
-                    name: 'AddPersonForm',
-                    id: 'AddPersonForm',
+                    store: this.up('grid').getStore(),
                     items: [
                         {
                             fieldLabel: 'First Name',
                             name: 'firstName',
-                            regex: /.+/i,
+                            allowBlank: false,
                             msgTarget: 'under',
                             invalidText: 'This field is required.'
                         },
                         {
                             fieldLabel: 'Last Name',
                             name: 'lastName',
-                            regex: /.+/i,
+                            allowBlank: false,
                             msgTarget: 'under',
                             invalidText: 'This field is required.'
                         }
@@ -48,27 +47,21 @@ Ext.define('InterviewApp.view.myMainList.List', {
                         {
                             xtype: 'button',
                             text: 'Add',
+                            formBind: true,
                             handler: function () {
                                 var form = this.up('form');
-                                console.log(form, form.getForm().findField("lastName").getValue());
-
-                                var record = form.getRecord();
-                                console.log(record);
-                                if (form.isValid()) { // make sure the form contains valid data before submitting
-                                    //form.updateRecord(record); // update the record with the form data
-                                    //record.save({ // save the record to the server
-                                    //    success: function (user) {
-                                    //        Ext.Msg.alert('Success', 'User saved successfully.')
-                                    //    },
-                                    //    failure: function (user) {
-                                    //        Ext.Msg.alert('Failure', 'Failed to save user.')
-                                    //    }
-                                    //});
+                                var peronnelStore = Ext.data.StoreManager.lookup('peronnelStore');
+                                if (form.isValid()) {
+                                    var rec = {
+                                        first_name: form.getForm().findField("firstName").getValue(),
+                                        last_name: form.getForm().findField("lastName").getValue()
+                                    };
+                                    peronnelStore.insert(0, rec);
+                                    this.up('window').close();
                                 } else {
                                     Ext.Msg.alert('Invalid Data', 'Please correct form errors.');
                                 }
                             }
-                            //disabled: this.up('form').isValid()
                         },
                         {
                             xtype: 'button',
@@ -82,11 +75,11 @@ Ext.define('InterviewApp.view.myMainList.List', {
 
                 Ext.create('Ext.window.Window', {
                     title: 'Add person',
-                    height: 200,
+                    height: 250,
                     width: 400,
                     layout: 'fit',
                     modal: true,
-                    items: 
+                    items:
                         [
                             formPanel
                         ]
