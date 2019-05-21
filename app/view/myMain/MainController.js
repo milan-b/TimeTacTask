@@ -3,6 +3,7 @@ Ext.define('InterviewApp.view.myMain.MainController', {
 
     alias: 'controller.mymain-main'
 
+
    
 
 });
