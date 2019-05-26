@@ -12,7 +12,11 @@ Ext.define('InterviewApp.model.Personnel', {
                 return record.data.first_name + ' ' + record.data.last_name;
             }
         },
-        { name: 'avatar', type: 'string' },
+        {
+            name: 'avatar', type: 'string', convert: function (val) {
+                return val ? val : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y';
+            }
+        },
         { name: 'active', type: 'boolean', defaultValue: 1 }
 
     ]
