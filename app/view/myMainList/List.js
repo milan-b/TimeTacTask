@@ -35,6 +35,14 @@ Ext.define('InterviewApp.view.myMainList.List', {
                 }).show();
 
             }
+        },
+        {
+            xtype: 'button',
+            text: 'Select second row',
+            handler: function (toolbar) {
+                var grid = toolbar.up('grid');
+                grid.setSelection(1);
+            }
         }
     ],
 
@@ -45,6 +53,7 @@ Ext.define('InterviewApp.view.myMainList.List', {
             }
         },
         { text: 'Name', dataIndex: 'fullname', flex: 1 },
+        { text: 'Addres', dataIndex: 'first_name', flex: 1 },
         { text: 'Active', dataIndex: 'active', xtype: 'checkcolumn', flex: 1 },
         {
             text: 'Action',
@@ -62,21 +71,6 @@ Ext.define('InterviewApp.view.myMainList.List', {
                 iconCls: 'x-fa fa-trash',
                 tooltip: 'Delete',
                 handler: 'deletePeson'
-                //        function (grid, rowIndex, colIndex) {
-                //    var rec = grid.getStore().getAt(rowIndex);
-                //    Ext.Msg.show({
-                //        title: 'Delete Changes?',
-                //        message: "Do you want to delete  " + rec.get('fullname') + '?',
-                //        icon: Ext.Msg.QUESTION,
-                //        buttons: Ext.MessageBox.YESNO,
-                //        fn: function (btn) {
-                //            if (btn === 'yes') {
-                //                var rec = grid.getStore().getAt(rowIndex);
-                //                grid.getStore().remove(rec);
-                //            }
-                //        }
-                //    });
-                //}
             }]
         }
     ],
